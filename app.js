@@ -17,4 +17,9 @@ while (parseInt(guess) !== targetNum) {
     guess = prompt('Too low! Enter a new guess!');
   }
 }
-console.log(`You GOT it! It took you ${attempts} guess(es).`);
+
+if (guess === 'q') {
+  console.log('Okay, quitting...');
+} else {
+  console.log(`You GOT it! It took you ${attempts} guess(es).`);
+}
