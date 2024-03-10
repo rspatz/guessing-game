@@ -4,14 +4,17 @@ while (!maxNumber) {
 }
 
 const targetNum = Math.floor(Math.random() * maxNumber) + 1;
-console.log(targetNum);
 
 let guess = parseInt(prompt('Enter your first guess!'));
-while (guess !== targetNum) {
+let attempts = 1;
+
+while (parseInt(guess) !== targetNum) {
+  if (guess === 'q') break;
+  attempts++;
   if (guess > targetNum) {
-    guess = parseInt(prompt('Too high! Enter a new guess!'));
+    guess = prompt('Too high! Enter a new guess!');
   } else {
-    guess = parseInt(prompt('Too low! Enter a new guess!'));
+    guess = prompt('Too low! Enter a new guess!');
   }
 }
-console.log('You GOT it!');
+console.log(`You GOT it! It took you ${attempts} guess(es).`);
